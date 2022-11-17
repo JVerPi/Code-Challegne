@@ -1,0 +1,70 @@
+﻿@page
+@model WeahterModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1>Stadtnahme eingaben</h1>
+
+    <div>
+        <label style="font-size:15px; font-weight:bold ">Stadt: </label>
+        <input id="txtCity" type="text" />
+        <button id="btnSubmit" onclick="POSTrestartLog()">Stadt Suchen</button>
+    </div>
+
+    <div>
+        <h3>Weather Information:</h3>
+        <table>
+            <tr>
+                <img id="imgWeatherIconUrl" src="" title="Weather Icon" />
+            </tr>
+            <tr>
+                <div>   
+                    <strong>Stadt: </strong>
+                    <span id="lblCity"></span>  , <span id="lblCountry"></span>  
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <strong>Latitude: </strong>
+                    <label id="lblLat"></label><br />
+                    <strong>Longitude: </strong>
+                    <label id="lblLon"></label>
+
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <strong>Description:</strong>
+                    <label id="lblDescription"></label><br />
+                    <strong>Temperature:</strong>
+                    <label id="lblTemperature"></label><br />
+                    <strong>Luftfruck:</strong>
+                    <label id="lblpreassure"></label><br />
+                    <strong>Feuchtigkeit:</strong>
+                    <label id="lblHumidity"></label><br />
+                    <strong>geringste Temperature (Min): </strong>
+                    <label id="lblTempMin"></label><br />
+                    <strong>höchste Temperature (Max): </strong>
+                    <label id="lblTempMin"></label><br />
+                    <strong>Widgeschwindikeit:</strong>
+                    <label id="lblHairspeed"></label><br />
+                    <strong>Windrichtung:</strong>
+                    <label id="lblHairdirection"></label><br />
+                </div>
+            </tr>
+            @*<tr>
+                <td>
+                    Temperature (Feels Like): <label id="lblTemperature"></label><br />
+                    Luftdruck: <label id="lblpreassure"></label><br />
+                    Feuchtigkeit:<label id="lblhumidity"></label><br />
+                    geringste Temperature (Min):<label id="lblTempMin"></label><br />
+                    höschste Temperature (Max): <label id="lblTempMax"></label><br />
+                    Widgeschwindikeit: <label id="lblairspeed"></label><br />
+                    Windrichtung: <label id="lblairdirection"></label><br />
+                </td>
+            </tr>*@
+        </table>
+    </div>    
+</div>

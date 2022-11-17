@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - .NET Core App</title>
+
+    <!--CSS Docs-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebWeatherApp.styles.css" asp-append-version="true" />
+
+    <!-- Javascript -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/js/site.js" asp-append-version="true"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <tr class="mycontainer" style="background:#80a1f3">
+                <div class="navbar-header" style="margin-left: 150px; >
+                    @Html.ActionLink("MyWeather App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })    
+                </div> 
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/contact">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+            </tr>
+        </nav>
+    </header>
+    
+    <div class="container-body-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div>
+            &copy;@DateTime.Now.Year - MyWeather App - <a href="https://www.linkedin.com/in/jlvergara" >[in]JLVergara</a> - <a asp-area="" asp-page="/contact">Kontak Info</a>
+        </div>
+    </footer>   
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

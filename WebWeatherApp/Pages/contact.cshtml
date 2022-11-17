@@ -1,0 +1,28 @@
+﻿@page
+@model InformationModel
+@{
+    ViewData["Title"] = "Contact Information";
+}
+<h1>@ViewData["Title"]</h1>
+<br />
+
+<table>
+    
+    @for (int i = 0; i < Model.informations.Count(); i++)
+    {
+        <tr style="font-size: 18px;">
+            <td style="font-weight: bold; padding-left: 50px; padding-bottom: 10px">
+                @Model.informations[i]["name"]
+            </td>
+            <td style="padding-left: 20px;">
+                @Model.informations[i]["info"]
+            </td>
+        </tr>
+
+        @if (i < Model.informations.Count() - 3)
+        {
+            <tr style="height:10px;"></tr>
+        }
+    }
+</table>
+
